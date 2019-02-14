@@ -8,3 +8,16 @@ body {
     width: 300px;
     background-color: white;
 }
+ul {
+    list-style: none;
+    
+}
+li {
+    background-color: white;
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 50px;
+    line-height: 30px;
+}
