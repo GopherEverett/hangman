@@ -7,4 +7,5 @@ A word game where player chooses letters and if they contained in a hidden word 
   * Languages - HTML5, CSS3, Javascript, jQuery
 ## Features
 ## Wireframe
+ 
 ## Future Development

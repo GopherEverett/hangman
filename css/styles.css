@@ -1,0 +1,10 @@
+body {
+    height: 100vh;
+    width: 100 vh;
+    background-color: rgb(61, 85, 61);
+}
+.score {
+    height: 100px;
+    width: 300px;
+    background-color: white;
+}
