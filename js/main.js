@@ -1,7 +1,8 @@
-var playWord = ['dog', 'cat']
+var wordList = ['dog', 'cat','badger', 'dude','lorem', 'bottle'];
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var wordInPlay;
 var guessLet;
 var buttons = function(){
     $('.buttons').append('<ul id="buttons"></ul>')
@@ -12,9 +13,16 @@ var buttons = function(){
         guessLet = $(this).text()
     })
     }
+};
+var  chooseWord = function(){
+    let randomWordInd = Math.floor(Math.random()*wordList.length)
+    wordInPlay = wordList[randomWordInd]
+    wordList.splice(randomWordInd, 1)
+    console.log(wordInPlay)
 }
-
 $('#start').on('click', function() {
     buttons()
-})
+    chooseWord()
+});
+
 
