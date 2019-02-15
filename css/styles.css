@@ -3,13 +3,43 @@ body {
     width: 100 vh;
     background-color: rgb(61, 85, 61);
 }
+.wrapper {
+  display: grid;
+  grid-template-rows: 20% 360px 20% 20%;
+  grid-template-columns: 25% auto 25%;
+}
+.tLeft {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    display: flex;
+    justify-content: center;
+}
+.topCent {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-content: center;
+}
+.tRight {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+}
+.center {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-content: center;
+}
 .score {
     height: 100px;
-    width: 300px;
+    width: 200px;
     background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 ul {
     list-style: none;
+    
     
 }
 li {
@@ -19,10 +49,40 @@ li {
     margin-right: 10px;
     margin-top: 10px;
     width: 50px;
-    line-height: 30px;
+    line-height: 50px;
     cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 #start  {
+    height: 100px;
+    width: 200px;
+    background-color: white;
     cursor: pointer;
-
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.buttons {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: center;    
+}
+.hidden {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hidden div {
+    background-color: white;
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 50px;
+    line-height: 50px;
+    border: 1px solid black;
+    border-radius: 4px;
 }
