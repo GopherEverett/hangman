@@ -1,11 +1,12 @@
 body {
     height: 100vh;
     width: 100 vh;
-    background-color: rgb(188, 192, 188);
+    background-color: rgb(231, 236, 231);
+    font-family: 'Bangers', cursive;
 }
 .wrapper {
   display: grid;
-  grid-template-rows: 20% 360px 20% 20%;
+  grid-template-rows: 20vh 360px 15vh 20vh;
   grid-template-columns: 25% auto 25%;
 }
 .tLeft {
@@ -13,6 +14,7 @@ body {
     grid-column: 1 / span 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .topCent {
     grid-row: 1 / span 1;
@@ -25,6 +27,7 @@ body {
     grid-column: 3 / span 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .center {
     grid-row: 2 / span 1;
@@ -36,12 +39,17 @@ body {
     height: 100px;
     width: 200px;
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 4px;
+    font-size: 30px
 }
 img {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 30px;
+}
+h1 {
+    font-size: 4em;
+    line-height: 20px;
 }
 ul {
     list-style: none;
@@ -57,16 +65,24 @@ li {
     width: 50px;
     line-height: 50px;
     cursor: pointer;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 4px;
+    font-size: 38px;
 }
 #start  {
     height: 100px;
     width: 200px;
     background-color: white;
     cursor: pointer;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 4px;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+
 }
 .buttons {
     grid-row: 4 / span 1;
@@ -90,6 +106,6 @@ li {
     margin-top: 10px;
     width: 50px;
     line-height: 50px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 4px;
 }

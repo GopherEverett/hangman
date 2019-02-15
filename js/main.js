@@ -51,14 +51,24 @@ var winFunc = function () {
     $('h1').text("YOU WIN!")
     score += 100
     $('.score').append(`<div>${score}</div>`)
+    $('.buttons').remove()
+    $('.hidden').remove()
+    playAgain()
 };
 var loseFunc = function () {
     $('h1').text("LOSER!")
     score -= 100
     $('.score').append(`<div>${score}</div>`)
+    $('.buttons').remove()
+    $('.hidden').remove()
+    playAgain()
 }
-$('#start').on('click', function () {
+$('#start div').on('click', function () {
     buttons()
     chooseWord()
     $(this).remove()
+
 })
+var playAgain = function() {
+    $('#start').append('<div>PLay Again</div>')
+}
