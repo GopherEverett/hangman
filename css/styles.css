@@ -23,6 +23,8 @@ body {
 .tRight {
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
+    display: flex;
+    justify-content: center;
 }
 .center {
     grid-row: 2 / span 1;

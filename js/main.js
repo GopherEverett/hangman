@@ -60,4 +60,5 @@ var loseFunc = function () {
 $('#start').on('click', function () {
     buttons()
     chooseWord()
+    $(this).remove()
 })
