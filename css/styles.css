@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     width: 100 vh;
-    background-color: rgb(172, 192, 172);
+    background-color: rgb(188, 192, 188);
 }
 .wrapper {
   display: grid;
