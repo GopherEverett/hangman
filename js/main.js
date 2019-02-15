@@ -32,7 +32,7 @@ var buttons = function () {
                         loseFunc()
                     }
                 }
-                
+
             }
         })
         $(this).remove()
@@ -50,17 +50,23 @@ var chooseWord = function () {
 var winFunc = function () {
     $('h1').text("YOU WIN!")
     score += 100
-    $('.score').append(`<div>${score}</div>`)
-    $('.buttons').remove()
-    $('.hidden').remove()
+    $('.score div').replaceWith(`<div>${score}</div>`)
+    $('.buttons ul').remove()
+    $('.hidden div').remove()
+    guessGood = 0;
+    badCounter = 0;
+    guessBad = 0;
     playAgain()
 };
 var loseFunc = function () {
     $('h1').text("LOSER!")
     score -= 100
-    $('.score').append(`<div>${score}</div>`)
-    $('.buttons').remove()
-    $('.hidden').remove()
+    $('.score div').replaceWith(`<div>${score}</div>`)
+    $('.buttons ul').remove()
+    $('.hidden div').remove()
+    guessGood = 0;
+    badCounter = 0;
+    guessBad = 0;
     playAgain()
 }
 $('#start div').on('click', function () {
@@ -69,6 +75,12 @@ $('#start div').on('click', function () {
     $(this).remove()
 
 })
-var playAgain = function() {
+var playAgain = function () {
     $('#start').append('<div>PLay Again</div>')
+    $('#start div').on('click', function () {
+        $('h1').text("HANGMAN")
+        buttons()
+        chooseWord()
+        $(this).remove()
+    })
 }
