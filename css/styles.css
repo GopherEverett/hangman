@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     width: 100 vh;
-    background-color: rgb(61, 85, 61);
+    background-color: rgb(172, 192, 172);
 }
 .wrapper {
   display: grid;
@@ -36,6 +36,10 @@ body {
     background-color: white;
     border: 1px solid black;
     border-radius: 4px;
+}
+img {
+    border: 1px solid black;
+    border-radius: 30px;
 }
 ul {
     list-style: none;
@@ -76,6 +80,7 @@ li {
     align-items: center;
 }
 .hidden div {
+    color: white;
     background-color: white;
     float: left;
     text-align: center;
