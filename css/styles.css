@@ -20,4 +20,9 @@ li {
     margin-top: 10px;
     width: 50px;
     line-height: 30px;
+    cursor: pointer;
+}
+#start  {
+    cursor: pointer;
+
 }
