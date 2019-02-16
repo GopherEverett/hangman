@@ -25,7 +25,7 @@ var buttons = function () {
                 }
             } else {
                 guessBad++                                  //keeps count of incorrect guesses
-                if (guessBad === wordInPlay.length) {
+                if ((guessBad - guessGood) === wordInPlay.length) {
                     badCounter++
                     guessBad = 0
                     if (badCounter > 7) {                  //eight incorrect calls lose function
