@@ -28,7 +28,7 @@ var buttons = function () {
                 guessBad++                                  //keeps count of incorrect guesses
                 if (guessBad === wordInPlay.length) {
                     badCounter++
-                    // guessBad = 0
+                    $('.center img').attr('src',`./images/hangman(${badCounter}).png`)
                     if (badCounter > 7) {                  //eight incorrect calls lose function
                         loseFunc()
                     }
@@ -53,6 +53,7 @@ var winFunc = function () {     //displays winning and resets counters and lette
     score += 100
     $('.score div').replaceWith(`<div>${score}</div>`)
     $('.buttons ul').remove()
+    $('h1').addClass('animated heartBeat')
     guessGood = 0;
     badCounter = 0;
     guessBad = 0;
@@ -60,6 +61,7 @@ var winFunc = function () {     //displays winning and resets counters and lette
 };
 var loseFunc = function () {   //same as win function but displays loser and deprecates score
     $('h1').text("LOSER!")
+    $('h1').addClass('animated bounceInDown')
     score -= 100
     $('.score div').replaceWith(`<div>${score}</div>`)
     $('.buttons ul').remove()
