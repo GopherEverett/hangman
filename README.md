@@ -10,16 +10,13 @@ Live site:
   * Libraries - Animate.css, jQuery
   * Google fonts
   * VS Code
-  * Project Planning -  Figma,[Trello](https://trello.com/b/yrQXwBrj/project-1-hangman)
+  * Project Planning -  Figma, [Trello](https://trello.com/b/yrQXwBrj/project-1-hangman)
 ## Features
   * Start button
   * Alphabet buttons that disappear after being selected
 ## Wireframe
-![image of start wireframe
-(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png)
-![image of lose wireframe]
-(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png)
-![image of win wireframe]
-(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwin.png)
+<img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png"/>
+<img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png"/>
+<img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwin.png"/>
 ## Future Development
 Ability for player to choose difficulty level
