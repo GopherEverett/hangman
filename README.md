@@ -10,10 +10,13 @@ Live site:
   * Libraries - Animate.css, jQuery
   * Google fonts
   * VS Code
-  * Project Planning - [Trello](https://trello.com/b/yrQXwBrj/project-1-hangman)
+  * Project Planning -  Figma,[Trello](https://trello.com/b/yrQXwBrj/project-1-hangman)
 ## Features
   * Start button
   * Alphabet buttons that disappear after being selected
 ## Wireframe
- 
+!(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png)
+!(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png)
+!(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwin.png)
 ## Future Development
+Ability for player to choose difficulty level
