@@ -15,6 +15,7 @@ var buttons = function () {
     }
     $('#buttons').on('click', 'li', function (event) { //event listener on letters
         event.preventDefault()
+        $('audio#click')[0].play()
         guessLet = $(this).text()
         guessBad = 0;
         $('.hidden div').each(function () {
@@ -60,6 +61,7 @@ var winFunc = function () {     //displays winning and resets counters and lette
     playAgain()
 };
 var loseFunc = function () {   //same as win function but displays loser and deprecates score
+    $('audio#drop')[0].play()
     $('h1').text("LOSER!")
     $('h1').addClass('animated bounceInDown')
     score -= 100
@@ -81,8 +83,8 @@ var playAgain = function () {                       // creates replay button wit
     $('#start').append('<div>PLay Again</div>')
     $('#start div').on('click', function () {
         $('h1').text("HIPSTER HANGMAN")
-        // $('.buttons ul').remove()
-        $('.hidden div').remove()
+        $('.center img').attr('src',`./images/hangman(${badCounter}).png`) //resets image
+        $('.hidden div').remove()                   //removes hidden word letters
         buttons()                                   //calls starting functions again
         chooseWord()
         $(this).remove()
