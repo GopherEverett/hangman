@@ -15,8 +15,11 @@ Live site:
   * Start button
   * Alphabet buttons that disappear after being selected
 ## Wireframe
-!(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png)
-!(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png)
-!(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwin.png)
+![image of start wireframe
+(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png)
+![image of lose wireframe]
+(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png)
+![image of win wireframe]
+(https://github.com/GopherEverett/hangman/blob/master/images/hangmanwin.png)
 ## Future Development
 Ability for player to choose difficulty level
