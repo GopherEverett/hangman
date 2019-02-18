@@ -6,13 +6,14 @@ A word game where a player chooses letters and if they are contained in a hidden
 
 Live site:
 ## Technologies Used
-  * Languages - HTML5, CSS3, Javascript, jQuery
-  * Animate.css
+  * Languages - HTML5, CSS3, Javascript
+  * Libraries - Animate.css, jQuery
   * Google fonts
   * VS Code
   * Project Planning - [Trello](https://trello.com/b/yrQXwBrj/project-1-hangman)
 ## Features
-
+  * Start button
+  * Alphabet buttons that disappear after being selected
 ## Wireframe
  
 ## Future Development

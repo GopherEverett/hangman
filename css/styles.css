@@ -50,11 +50,18 @@ body {
     align-items: center;
     text-shadow: 3px 3px 2px gray;
 }
-.bLeft{
+.bLeft {
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.bRight {
+    grid-row: 3 / span 1;
+    grid-column: 3 / span 1;
+    display: flex;
+    justify-content: left;
     align-items: center;
 }
 .reset {
@@ -119,7 +126,7 @@ li:hover {
 
 }
 #start:active {
-    top: 5px;
+
 }
 .buttons {
     grid-row: 4 / span 1;

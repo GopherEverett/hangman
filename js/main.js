@@ -50,6 +50,9 @@ var chooseWord = function () {      //picks word randomly from array of words
     }
 };
 var winFunc = function () {     //displays winning and resets counters and letters
+    $('audio#play')[0].pause()
+    
+    $('audio#win')[0].play()
     $('h1').text("YOU WIN!")
     score += 100
     $('.score div').replaceWith(`<div>${score}</div>`)
@@ -61,6 +64,7 @@ var winFunc = function () {     //displays winning and resets counters and lette
     playAgain()
 };
 var loseFunc = function () {   //same as win function but displays loser and deprecates score
+    $('audio#play')[0].pause()
     $('audio#drop')[0].play()
     $('h1').text("LOSER!")
     $('h1').addClass('animated bounceInDown')
@@ -74,6 +78,7 @@ var loseFunc = function () {   //same as win function but displays loser and dep
     playAgain()
 }
 $('#start div').on('click', function () {   //start button created with listener and calls two starting functions
+    $('audio#play')[0].play()
     buttons()
     chooseWord()
     $(this).remove()
@@ -82,6 +87,8 @@ $('#start div').on('click', function () {   //start button created with listener
 var playAgain = function () {                       // creates replay button with listener
     $('#start').append('<div>PLay Again</div>')
     $('#start div').on('click', function () {
+        $('audio#play')[0].currentTime = 0
+        $('audio#play')[0].play()
         $('h1').text("HIPSTER HANGMAN")
         $('.center img').attr('src',`./images/hangman(${badCounter}).png`) //resets image
         $('.hidden div').remove()                   //removes hidden word letters
@@ -92,5 +99,8 @@ var playAgain = function () {                       // creates replay button wit
 }
 $('.reset').on('click', function () {
     location.reload()
+})
+$('#play').on('ended', function() {
+    loseFunc()
 })
 // drinking vinegar deep v squid keffiyeh selvage master cleanse keytar mustache whatever meh 8-bit wayfarers DIY iPhone banjo typewriter post-ironic bespoke synth narwhal selfies Bushwick aesthetic viral authentic fingerstache blog sartorial bicycle rights Vice gentrify before they sold out +1 dreamcatcher put a bird on it hashtag next level biodiesel Shoreditch organic cliche Odd Future XOXO skateboard pug PBR salvia Portland gluten-free kale chips forage kogi flexitarian Wes Anderson Austin flannel trust fund polaroid ugh vegan you probably haven't heard of them chambray messenger bag tote bag heirloom fanny pack YOLO twee Echo Park Thundercats mumblecore High Life quinoa tofu cred art party church-key raw denim swag leggings Tumblr roof party brunch Truffaut retro stumptown 90's Pitchfork Schlitz sriracha Kickstarter umami seitan tousled Banksy try-hard VHS fixie four loko pop-up bitters pickled ethical Tonx food truck lomo PBR&B photo booth hella disrupt kitsch 3 wolf moon Blue Bottle semiotics plaid yr cornhole pork belly readymade crucifix cray fashion axe occupy fap distillery hoodie Marfa vinyl ennui paleo Carles scenester chia locavore jean shorts Brooklyn small batch craft beer meggings lo-fi butcher artisan actually literally farm-to-table sustainable Cosby sweater street art Williamsburg single-origin coffee Intelligentsia shabby chic beard direct trade  Pinterest tattooed chillwave slow-carb cardigan gastropub mixtape McSweeney's Godard asymmetrical irony Etsy letterpress mlkshk banh mi wolf Neutra normcore pour-over American Apparel freegan Helvetica
