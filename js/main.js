@@ -11,11 +11,11 @@ var guessGood = 0;
 var badCounter = 0;
 var guessBad = 0;
 var buttons = function () {
-    $('.buttons').append('<ul id="buttons"></ul>')  //Create buttons for alphabet
+    $('.buttons').append('<ul id="buttons"></ul>')      //Create buttons for alphabet
     for (var i = 0; i < alphabet.length; i++) {
         $('#buttons').append(`<li>${alphabet[i]}</li>`)
     }
-    $('#buttons').on('click', 'li', function (event) { //event listener on letters
+    $('#buttons').on('click', 'li', function (event) {   //event listener on letters
         event.preventDefault()
         $('audio#click')[0].play()
         guessLet = $(this).text()
@@ -24,16 +24,16 @@ var buttons = function () {
         $(this).remove()
     })
 }
-var chooseWord = function () {      //picks word randomly from array of words
+var chooseWord = function () {                    //picks word randomly from array of words
     let randomWordInd = Math.floor(Math.random() * wordList.length)
     wordInPlay = wordList[randomWordInd]
     wordList.splice(randomWordInd, 1)
-    let arr = wordInPlay.split("")              //splits word into array
+    let arr = wordInPlay.split("")                   //splits word into array
     for (var i = 0; i < arr.length; i++) {
         $('.hidden').append(`<div>${arr[i]}</div>`) //adds word to gameboard
     }
 };
-var winFunc = function () {     //displays winning and resets counters and letters
+var winFunc = function () {                          //displays winning and resets counters and letters
     $('h1').text("YOU WIN!")
     playCounter++
     if ((playCounter % 2) === 0) {
@@ -52,7 +52,7 @@ var winFunc = function () {     //displays winning and resets counters and lette
     guessBad = 0;
     playAgain()
 };
-var loseFunc = function () {   //same as win function but displays loser and deprecates score
+var loseFunc = function () {                            //same as win function but displays loser and deprecates score
     $('audio#play')[0].pause()
     $('audio#drop')[0].play()
     $('h1').text("LOSER!")
@@ -72,33 +72,32 @@ var loseFunc = function () {   //same as win function but displays loser and dep
     guessBad = 0;
     playAgain()
 }
-$('#start div').on('click', function () {   //start button listener that calls two starting functions
+$('#start div').on('click', function () {                  //start button listener that calls two starting functions
     $('audio#play')[0].play()
     $('.score div').replaceWith(`<div>player one: ${scoreOne}</div>`)
     buttons()
     chooseWord()
     $(this).remove()
 })
-var playAgain = function () {                       // creates replay button with listener
+var playAgain = function () {                            // creates replay button with listener
     $('#start').append('<div>next player</div>')
     $('#start div').on('click', function () {
         $('audio#play')[0].currentTime = 0
         $('audio#play')[0].play()
         $('h1').text("HIPSTER HANGMAN")
-        $('.center img').attr('src', `./images/hangman(${badCounter}).png`) //resets image
-        $('.hidden div').remove()                   //removes hidden word letters
+        $('.center img').attr('src', `./images/hangman(${badCounter}).png`)  //resets image
+        $('.hidden div').remove()                        //removes hidden word letters
         if ((playCounter % 2) === 0) {
             $('.score div').replaceWith(`<div>player two: ${scoreTwo}</div>`)
         } else {
             $('.score div').replaceWith(`<div>player one: ${scoreOne}</div>`)
         }
-        buttons()                                   //calls starting functions again
+        buttons()                                        //calls starting functions again
         chooseWord()
         $(this).remove()
     })
 }
 $('.reset').on('click', function () {
-    $(this).addClass("animated pulse")
     location.reload()
 })
 $('#play').on('ended', function () {
@@ -106,10 +105,10 @@ $('#play').on('ended', function () {
 })
 var checkFunc = function () {
     $('.hidden div').each(function () {
-        if ($(this).text() === guessLet) {      //Checking for a match
+        if ($(this).text() === guessLet) {              //Checking for a match
             $(this).css('color', '#05a8b7').addClass("animated flipInX")    //changes color to unhide and animates letter
             guessGood++
-            if (guessGood === wordInPlay.length) {  //checks match to word to call win function
+            if (guessGood === wordInPlay.length) {      //checks match to word to call win function
                 winFunc()
             }
         } else {
