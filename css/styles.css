@@ -39,8 +39,8 @@ body {
     
 }
 .score {
-    height: 100px;
-    width: 220px;
+    height: 80px;
+    width: 250px;
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
@@ -66,7 +66,7 @@ body {
     align-items: center;
 }
 .reset {
-    height: 100px;
+    height: 80px;
     width: 200px;
     background-color: white;
     cursor: pointer;
@@ -110,7 +110,7 @@ li:hover {
     text-shadow: 3px 3px 2px #05a8b7;
 }
 #start  {
-    height: 100px;
+    height: 80px;
     width: 200px;
     background-color: white;
     cursor: pointer;
@@ -150,9 +150,9 @@ li:hover {
     line-height: 70px;
     border: 2px solid black;
     border-radius: 10px;
-    font-size: 52px;
+    font-size: 56px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
     h1 {
         font-size: 2em;
         line-height: 40px;
