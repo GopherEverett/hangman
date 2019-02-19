@@ -34,7 +34,7 @@ var chooseWord = function () {                    //picks word randomly from arr
     }
 };
 var winFunc = function () {                          //displays winning and resets counters and letters
-    $('h1').text("YOU WIN!")
+    $('h1').replaceWith(`<h1 class="animated bounceInDown">YOU WIN!</h1>`)
     playCounter++
     if ((playCounter % 2) === 0) {
         scoreOne += 100
@@ -44,7 +44,6 @@ var winFunc = function () {                          //displays winning and rese
         $('.score div').replaceWith(`<div>player two: ${scoreTwo}</div>`)
     }
     $('.buttons ul').remove()
-    $('h1').addClass('animated bounceInDown')
     $('audio#play')[0].pause()
     $('audio#win')[0].play()
     guessGood = 0;
@@ -55,8 +54,7 @@ var winFunc = function () {                          //displays winning and rese
 var loseFunc = function () {                            //same as win function but displays loser and deprecates score
     $('audio#play')[0].pause()
     $('audio#drop')[0].play()
-    $('h1').text("LOSER!")
-    $('h1').addClass('animated bounceInDown')
+    $('h1').replaceWith(`<h1 class="animated bounceInDown">LOSER!</h1>`)
     playCounter++
     if ((playCounter % 2) === 0) {
         scoreOne -= 100
