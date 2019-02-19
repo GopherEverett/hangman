@@ -2,14 +2,14 @@ body {
     background-image: url("../images/abstract-art-background-1227511.jpg");
     background-size: cover;
     height: 100vh;
-    width: 100 vh;
     background-color: rgb(231, 236, 231);
     font-family: 'Bangers', cursive;
+    user-select: none;
 }
 .wrapper {
   display: grid;
-  grid-template-rows: 20vh 360px 15vh 20vh;
-  grid-template-columns: 30vh auto 30vh;
+  grid-template-rows: 20vh 40vh 15vh 25vh;
+  grid-template-columns: 23vw auto 23vw;
 }
 .tLeft {
     grid-row: 1 / span 1;
@@ -40,7 +40,7 @@ body {
 }
 .score {
     height: 100px;
-    width: 200px;
+    width: 220px;
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;

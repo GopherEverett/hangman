@@ -44,7 +44,7 @@ var winFunc = function () {                          //displays winning and rese
         $('.score div').replaceWith(`<div>player two: ${scoreTwo}</div>`)
     }
     $('.buttons ul').remove()
-    $('h1').addClass('animated heartBeat')
+    $('h1').addClass('animated bounceInDown')
     $('audio#play')[0].pause()
     $('audio#win')[0].play()
     guessGood = 0;
@@ -84,7 +84,7 @@ var playAgain = function () {                            // creates replay butto
     $('#start div').on('click', function () {
         $('audio#play')[0].currentTime = 0
         $('audio#play')[0].play()
-        $('h1').text("HIPSTER HANGMAN")
+        $('h1').replaceWith(`<h1 class="animated flipInX">HIPSTER HANGMAN</h1>`)
         $('.center img').attr('src', `./images/hangman(${badCounter}).png`)  //resets image
         $('.hidden div').remove()                        //removes hidden word letters
         if ((playCounter % 2) === 0) {
