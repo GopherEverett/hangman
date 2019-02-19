@@ -14,9 +14,16 @@ Live site:
 ## Features
   * Start button
   * Alphabet buttons that disappear after being selected
+  * Animation to show incorrect guess stages
+  * Score Display
+  * Play Again button
+  * Reset button
+  * Correct guesses displayed
 ## Wireframe
 <img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png"/>
 <img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png"/>
 <img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwin.png"/>
+
 ## Future Development
-Ability for player to choose difficulty level
+  * Ability for player to choose difficulty level
+  * Add A.I. (player vs. computer)

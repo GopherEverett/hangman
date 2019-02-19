@@ -1,9 +1,11 @@
-var wordList = ['gentrify', 'squid', 'synth', 'bespoke', 'banjo', 'selvage', 'mustache', 'keytar', 'organic'];
+var wordList = ['gentrify', 'squid', 'synth', 'bespoke', 'banjo', 'selvage', 'mustache', 'keytar', 'organic', 'paleo', 'flannel', 'bicycle', 'wayfarers', 'ironic', 'beard', 'artisinal'];
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var wordInPlay;
-var score = 0;
+var scoreOne = 0;
+var scoreTwo = 0;
+var playCounter = 1;
 var guessLet;
 var guessGood = 0;
 var badCounter = 0;
@@ -18,25 +20,7 @@ var buttons = function () {
         $('audio#click')[0].play()
         guessLet = $(this).text()
         guessBad = 0;
-        $('.hidden div').each(function () {
-            if ($(this).text() === guessLet) {      //Checking for a match
-                $(this).css('color', '#05a8b7')         //changes color to unhide
-                guessGood++
-                if (guessGood === wordInPlay.length) {  //checks match to word to call win function
-                    winFunc()
-                }
-            } else {
-                guessBad++                                  //keeps count of incorrect guesses
-                if (guessBad === wordInPlay.length) {
-                    badCounter++
-                    $('.center img').attr('src',`./images/hangman(${badCounter}).png`)
-                    if (badCounter > 7) {                  //eight incorrect calls lose function
-                        loseFunc()
-                    }
-                }
-
-            }
-        })
+        checkFunc()
         $(this).remove()
     })
 }
@@ -50,14 +34,19 @@ var chooseWord = function () {      //picks word randomly from array of words
     }
 };
 var winFunc = function () {     //displays winning and resets counters and letters
-    $('audio#play')[0].pause()
-    
-    $('audio#win')[0].play()
     $('h1').text("YOU WIN!")
-    score += 100
-    $('.score div').replaceWith(`<div>${score}</div>`)
+    playCounter++
+    if ((playCounter % 2) === 0) {
+        scoreOne += 100
+        $('.score div').replaceWith(`<div>player one: ${scoreOne}</div>`)
+    } else {
+        scoreTwo += 100
+        $('.score div').replaceWith(`<div>player two: ${scoreTwo}</div>`)
+    }
     $('.buttons ul').remove()
     $('h1').addClass('animated heartBeat')
+    $('audio#play')[0].pause()
+    $('audio#win')[0].play()
     guessGood = 0;
     badCounter = 0;
     guessBad = 0;
@@ -68,39 +57,71 @@ var loseFunc = function () {   //same as win function but displays loser and dep
     $('audio#drop')[0].play()
     $('h1').text("LOSER!")
     $('h1').addClass('animated bounceInDown')
-    score -= 100
-    $('.score div').replaceWith(`<div>${score}</div>`)
+    playCounter++
+    if ((playCounter % 2) === 0) {
+        scoreOne -= 100
+        $('.score div').replaceWith(`<div>player one: ${scoreOne}</div>`)
+    } else {
+        scoreTwo -= 100
+        $('.score div').replaceWith(`<div>player two: ${scoreTwo}</div>`)
+    }
     $('.buttons ul').remove()
-    $('.hidden div').css('color', 'black')
+    $('.hidden div').css('color', 'red').addClass("animated flipInY")
     guessGood = 0;
     badCounter = 0;
     guessBad = 0;
     playAgain()
 }
-$('#start div').on('click', function () {   //start button created with listener and calls two starting functions
+$('#start div').on('click', function () {   //start button listener that calls two starting functions
     $('audio#play')[0].play()
+    $('.score div').replaceWith(`<div>player one: ${scoreOne}</div>`)
     buttons()
     chooseWord()
     $(this).remove()
-
 })
 var playAgain = function () {                       // creates replay button with listener
-    $('#start').append('<div>PLay Again</div>')
+    $('#start').append('<div>next player</div>')
     $('#start div').on('click', function () {
         $('audio#play')[0].currentTime = 0
         $('audio#play')[0].play()
         $('h1').text("HIPSTER HANGMAN")
-        $('.center img').attr('src',`./images/hangman(${badCounter}).png`) //resets image
+        $('.center img').attr('src', `./images/hangman(${badCounter}).png`) //resets image
         $('.hidden div').remove()                   //removes hidden word letters
+        if ((playCounter % 2) === 0) {
+            $('.score div').replaceWith(`<div>player two: ${scoreTwo}</div>`)
+        } else {
+            $('.score div').replaceWith(`<div>player one: ${scoreOne}</div>`)
+        }
         buttons()                                   //calls starting functions again
         chooseWord()
         $(this).remove()
     })
 }
 $('.reset').on('click', function () {
+    $(this).addClass("animated pulse")
     location.reload()
 })
-$('#play').on('ended', function() {
+$('#play').on('ended', function () {
     loseFunc()
 })
-// drinking vinegar deep v squid keffiyeh selvage master cleanse keytar mustache whatever meh 8-bit wayfarers DIY iPhone banjo typewriter post-ironic bespoke synth narwhal selfies Bushwick aesthetic viral authentic fingerstache blog sartorial bicycle rights Vice gentrify before they sold out +1 dreamcatcher put a bird on it hashtag next level biodiesel Shoreditch organic cliche Odd Future XOXO skateboard pug PBR salvia Portland gluten-free kale chips forage kogi flexitarian Wes Anderson Austin flannel trust fund polaroid ugh vegan you probably haven't heard of them chambray messenger bag tote bag heirloom fanny pack YOLO twee Echo Park Thundercats mumblecore High Life quinoa tofu cred art party church-key raw denim swag leggings Tumblr roof party brunch Truffaut retro stumptown 90's Pitchfork Schlitz sriracha Kickstarter umami seitan tousled Banksy try-hard VHS fixie four loko pop-up bitters pickled ethical Tonx food truck lomo PBR&B photo booth hella disrupt kitsch 3 wolf moon Blue Bottle semiotics plaid yr cornhole pork belly readymade crucifix cray fashion axe occupy fap distillery hoodie Marfa vinyl ennui paleo Carles scenester chia locavore jean shorts Brooklyn small batch craft beer meggings lo-fi butcher artisan actually literally farm-to-table sustainable Cosby sweater street art Williamsburg single-origin coffee Intelligentsia shabby chic beard direct trade  Pinterest tattooed chillwave slow-carb cardigan gastropub mixtape McSweeney's Godard asymmetrical irony Etsy letterpress mlkshk banh mi wolf Neutra normcore pour-over American Apparel freegan Helvetica
+var checkFunc = function () {
+    $('.hidden div').each(function () {
+        if ($(this).text() === guessLet) {      //Checking for a match
+            $(this).css('color', '#05a8b7').addClass("animated flipInX")    //changes color to unhide and animates letter
+            guessGood++
+            if (guessGood === wordInPlay.length) {  //checks match to word to call win function
+                winFunc()
+            }
+        } else {
+            guessBad++                                  //keeps count of incorrect guesses
+            if (guessBad === wordInPlay.length) {
+                badCounter++
+                $('.center img').attr('src', `./images/hangman(${badCounter}).png`)
+
+                if (badCounter > 7) {                  //eight incorrect calls lose function
+                    loseFunc()
+                }
+            }
+        }
+    })
+}

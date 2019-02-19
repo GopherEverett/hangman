@@ -44,7 +44,8 @@ body {
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 40px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +116,8 @@ li:hover {
     cursor: pointer;
     border: 2px solid black;
     border-radius: 10px;
-    font-size: 50px;
+    font-size: 45px;
+    text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -123,10 +125,6 @@ li:hover {
 }
 #start:hover {
     text-shadow: 3px 3px 2px #05a8b7;
-
-}
-#start:active {
-
 }
 .buttons {
     grid-row: 4 / span 1;
