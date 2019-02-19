@@ -152,3 +152,42 @@ li:hover {
     border-radius: 10px;
     font-size: 52px;
 }
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+        line-height: 40px;
+        text-align: center;
+    }
+    body {
+        width: 100vw;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-rows: 20vh 30vh 15vh 25vh;
+        grid-template-columns: 20% 60% 20%;
+      }
+    .score {
+        font-size: 25px;
+    }
+    #start {
+        font-size: 25px;
+    }
+    .reset {
+        font-size: 25px;
+    }
+    .hidden div {
+        font-size: 30px;
+        width: 40px;
+        line-height: 40px;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    li {
+        font-size: 30px;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    img {
+          max-width: 280px;
+      }
+}
