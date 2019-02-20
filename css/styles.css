@@ -183,6 +183,8 @@ li:hover {
         margin-top: 5px;
     }
     li {
+        width: 40px;
+        line-height: 40px;
         font-size: 30px;
         margin-right: 5px;
         margin-top: 5px;
