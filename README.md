@@ -4,7 +4,8 @@ WDI-20 Project #1: Hangman Game
 
 A word game where a player chooses letters and if they are contained in a hidden word it fills in that letter. If word is filled in before eight incorrect guesses, player wins. 
 
-Live site:
+Live site: [www.johnajacobs.com]
+
 ## Technologies Used
   * Languages - HTML5, CSS3, Javascript
   * Libraries - Animate.css, jQuery
@@ -19,6 +20,7 @@ Live site:
   * Play Again button
   * Reset button
   * Correct guesses displayed
+  * Score keeping for two players
 ## Wireframe
 <img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwf.png"/>
 <img src="https://github.com/GopherEverett/hangman/blob/master/images/hangmanwflose.png"/>
