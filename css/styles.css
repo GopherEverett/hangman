@@ -6,11 +6,13 @@ body {
     font-family: 'Bangers', cursive;
     user-select: none;
 }
+
 .wrapper {
-  display: grid;
-  grid-template-rows: 20vh 40vh 15vh 25vh;
-  grid-template-columns: 23vw auto 23vw;
+    display: grid;
+    grid-template-rows: 20vh 40vh 15vh 25vh;
+    grid-template-columns: 23vw auto 23vw;
 }
+
 .tLeft {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
@@ -18,12 +20,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .topCent {
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
     display: flex;
     justify-content: center;
 }
+
 .tRight {
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
@@ -31,13 +35,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .center {
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
     display: flex;
     justify-content: center;
-    
 }
+
 .score {
     height: 80px;
     width: 250px;
@@ -51,6 +56,7 @@ body {
     align-items: center;
     text-shadow: 3px 3px 2px gray;
 }
+
 .bLeft {
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
@@ -58,6 +64,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .bRight {
     grid-row: 3 / span 1;
     grid-column: 3 / span 1;
@@ -65,6 +72,7 @@ body {
     justify-content: left;
     align-items: center;
 }
+
 .reset {
     height: 80px;
     width: 200px;
@@ -78,21 +86,26 @@ body {
     align-items: center;
     text-shadow: 3px 3px 2px gray;
 }
+
 .reset:hover {
     text-shadow: 3px 3px 2px #05a8b7;
 }
+
 img {
     border: 2px solid rgb(231, 236, 231);
     border-radius: 10px;
 }
+
 h1 {
     font-size: 4em;
     line-height: 20px;
     text-shadow: 3px 3px 2px gray
 }
+
 ul {
     list-style: none;
 }
+
 li {
     background-color: white;
     float: left;
@@ -106,10 +119,12 @@ li {
     border-radius: 10px;
     font-size: 38px;
 }
+
 li:hover {
     text-shadow: 3px 3px 2px #05a8b7;
 }
-#start  {
+
+#start {
     height: 80px;
     width: 200px;
     background-color: white;
@@ -123,15 +138,18 @@ li:hover {
     align-items: center;
     text-shadow: 3px 3px 2px gray;
 }
+
 #start:hover {
     text-shadow: 3px 3px 2px #05a8b7;
 }
+
 .buttons {
     grid-row: 4 / span 1;
     grid-column: 1 / span 3;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
+
 .hidden {
     grid-row: 3 / span 1;
     grid-column: 2 / span 1;
@@ -139,6 +157,7 @@ li:hover {
     justify-content: center;
     align-items: center;
 }
+
 .hidden div {
     color: white;
     background-color: white;
@@ -152,6 +171,7 @@ li:hover {
     border-radius: 10px;
     font-size: 56px;
 }
+
 @media only screen and (max-width: 750px) {
     h1 {
         font-size: 2em;
@@ -165,7 +185,7 @@ li:hover {
         display: grid;
         grid-template-rows: 20vh 30vh 15vh 25vh;
         grid-template-columns: 20% 60% 20%;
-      }
+    }
     .score {
         font-size: 25px;
     }
@@ -190,6 +210,6 @@ li:hover {
         margin-top: 5px;
     }
     img {
-          max-width: 280px;
-      }
+        max-width: 280px;
+    }
 }
