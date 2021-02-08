@@ -2,9 +2,9 @@
 ## Overview
 WDI-20 Project #1: Hangman Game
 
-A word game where a player chooses letters and if they are contained in a hidden word it fills in that letter. If word is filled in before eight incorrect guesses, player wins. 
+A word game where a player chooses letters and if they are contained in a hidden word it fills in that letter. If word is filled in before eight incorrect guesses, player wins.
 
-Live site: www.johnajacobs.com
+Live site: https://hipster-hangman.netlify.com/
 
 ## Technologies Used
   * Languages - HTML5, CSS3, Javascript
