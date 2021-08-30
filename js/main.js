@@ -1,16 +1,16 @@
-var wordList = ['gentrify', 'squid', 'synth', 'bespoke', 'banjo', 'selvage', 'mustache', 'keytar', 'organic', 'paleo', 'flannel', 'bicycle', 'wayfarers', 'ironic', 'beard', 'artisinal'];
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+const wordList = ['gentrify', 'squid', 'synth', 'bespoke', 'banjo', 'selvage', 'mustache', 'keytar', 'organic', 'paleo', 'flannel', 'bicycle', 'wayfarers', 'ironic', 'beard', 'artisinal'];
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var wordInPlay;
-var scoreOne = 0;
-var scoreTwo = 0;
-var playCounter = 1;
-var guessLet;
-var guessGood = 0;
-var badCounter = 0;
-var guessBad = 0;
-var buttons = function () {
+let wordInPlay;
+let scoreOne = 0;
+let scoreTwo = 0;
+let playCounter = 1;
+let guessLet;
+let guessGood = 0;
+let badCounter = 0;
+let guessBad = 0;
+let buttons = function () {
     $('.buttons').append('<ul id="buttons"></ul>')      //Create buttons for alphabet
     for (var i = 0; i < alphabet.length; i++) {
         $('#buttons').append(`<li>${alphabet[i]}</li>`)
@@ -24,7 +24,7 @@ var buttons = function () {
         $(this).remove()
     })
 }
-var chooseWord = function () {             //picks word randomly from array of words
+const chooseWord = function () {             //picks word randomly from array of words
     let randomWordInd = Math.floor(Math.random() * wordList.length)
     wordInPlay = wordList[randomWordInd]
     wordList.splice(randomWordInd, 1)
@@ -33,7 +33,7 @@ var chooseWord = function () {             //picks word randomly from array of w
         $('.hidden').append(`<div>${arr[i]}</div>`)   //adds word to gameboard
     }
 };
-var winFunc = function () {                          //displays winning and resets counters and letters
+const winFunc = function () {                          //displays winning and resets counters and letters
     $('h1').replaceWith(`<h1 class="animated bounceInDown">YOU WIN!</h1>`)
     playCounter++
     if ((playCounter % 2) === 0) {
@@ -51,7 +51,7 @@ var winFunc = function () {                          //displays winning and rese
     guessBad = 0;
     playAgain()
 };
-var loseFunc = function () {                 //same as win function but displays loser and deprecates score
+const loseFunc = function () {                 //same as win function but displays loser and deprecates score
     $('audio#play')[0].pause()
     $('audio#drop')[0].play()
     $('h1').replaceWith(`<h1 class="animated bounceInDown">LOSER!</h1>`)
@@ -77,7 +77,7 @@ $('#start div').on('click', function () {         //start button listener that c
     chooseWord()
     $(this).remove()
 })
-var playAgain = function () {                 // creates replay button with listener
+const playAgain = function () {                 // creates replay button with listener
     $('#start').append('<div>next player</div>')
     $('#start div').on('click', function () {
         $('audio#play')[0].currentTime = 0
@@ -101,7 +101,7 @@ $('.reset').on('click', function () {
 $('#play').on('ended', function () {
     loseFunc()
 })
-var checkFunc = function () {
+const checkFunc = function () {
     $('.hidden div').each(function () {
         if ($(this).text() === guessLet) {         //Checking for a match
             $(this).css('color', '#05a8b7').addClass("animated flipInX")    //changes color to unhide and animates letter
